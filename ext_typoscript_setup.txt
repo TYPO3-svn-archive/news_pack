@@ -1,0 +1,39 @@
+plugin.tt_news { 
+ itemLinkType =  
+ itemLinkTarget =  
+ 
+# the RTE parseFunc configuration
+ content_stdWrap {
+  makelinks = 1 
+  makelinks.http.keep = path
+  makelinks.http.extTarget = _blank 
+  makelinks.http.wrap = 
+  makelinks.mailto.keep = path 
+  makelinks.mailto.wrap =  
+  tags { 
+    link = TEXT 
+    link { 
+      current = 1 
+      typolink.parameter.data = parameters : allParams 
+      typolink.extTarget = _blank 
+      typolink.target = {$PAGE_TARGET}
+      typolink.wrap = 
+      parseFunc.constants =1 
+    } 
+  } 
+  allowTags = b,i,u,a,img,br,div,center,pre,font,hr,sub,sup,p,strong,em,li,ul,ol,blockquote,strike,span
+  denyTags = * 
+  sword = <font color="red"><b>|</b></font>
+  constants = 1 
+  }
+}
+
+plugin.news_pack {
+	categoryimagemaxwidth = 1000
+	categoryimagemaxheight = 20
+	categorytextmaxcharlength = 100
+	showcategorytext = 1
+	showcategoryimage = 1
+	maxnumberofcategoryimages = 10
+	maxnumberofcategorytexts = 1
+}
